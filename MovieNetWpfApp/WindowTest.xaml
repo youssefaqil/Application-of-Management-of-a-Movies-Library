@@ -1,0 +1,24 @@
+﻿<Window x:Class="MovieNetWpfApp.WindowTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieNetWpfApp.ViewModel"
+        mc:Ignorable="d"
+        Title="WindowTest" Height="450" Width="800" >
+    <Window.DataContext>
+        <local:UserVM/>
+    </Window.DataContext>
+    <Grid>
+
+
+        <ListBox HorizontalAlignment="Left" Height="301" Margin="352,90,0,0" VerticalAlignment="Top" Width="402" ItemsSource="{Binding MovieSelectionne, Mode=OneWay}"  >
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Title_UserMovie}" Width="141"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Id_UserMovie,Mode=TwoWay}" Width="140"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding MovieSelectionne.TitleGetSet,Mode=TwoWay}" Width="140"/>
+
+            <Button Command="{Binding AffModifierFilmeWindow}" CommandParameter="{Binding Id_UserMovie}" Content="Modifier" Width="140"/>
+            
+        </ListBox>
+    </Grid>
+</Window>

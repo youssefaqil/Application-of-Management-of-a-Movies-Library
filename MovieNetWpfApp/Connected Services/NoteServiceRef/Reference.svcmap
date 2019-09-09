@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4ea902b4-7a83-4d32-b3c7-bcaa7f3ffd4a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:64823/NoteServiceWCF.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NoteServiceWCF.xsd" MetadataType="Schema" ID="eb9c0a8b-24de-4267-8fa9-08bae1cfb4d0" SourceId="1" SourceUrl="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd2" />
+    <MetadataFile FileName="NoteServiceWCF1.xsd" MetadataType="Schema" ID="63d3bc39-5bed-4296-a665-3d76241e508e" SourceId="1" SourceUrl="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd1" />
+    <MetadataFile FileName="NoteServiceWCF.disco" MetadataType="Disco" ID="ebde5142-3b7f-4080-aaa3-d117772989a3" SourceId="1" SourceUrl="http://localhost:64823/NoteServiceWCF.svc?disco" />
+    <MetadataFile FileName="NoteServiceWCF2.xsd" MetadataType="Schema" ID="186aaa69-7069-47ad-8573-a0839afc86bf" SourceId="1" SourceUrl="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd0" />
+    <MetadataFile FileName="NoteServiceWCF.wsdl" MetadataType="Wsdl" ID="5379f492-3ad1-47f5-a8e2-f0c611e552e3" SourceId="1" SourceUrl="http://localhost:64823/NoteServiceWCF.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

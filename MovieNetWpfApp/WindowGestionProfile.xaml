@@ -1,0 +1,42 @@
+﻿<Controls:MetroWindow x:Class="MovieNetWpfApp.WindowGestionProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieNetWpfApp.ViewModel"
+        mc:Ignorable="d"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Mon Profile" Height="476.4" Width="526" 
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowStartupLocation="CenterScreen"
+      
+        Icon="Resources/icons8-couple-cinema-tickets-50.png">
+
+    <Window.DataContext>
+        <local:UserVM/>
+    </Window.DataContext>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <Label Content="Nom :"  Margin="82,100,389,320.2" RenderTransformOrigin="-0.64,0.617"/>
+        <TextBlock Text="{Binding NomProfil}"  Margin="136,105,173,315.2" TextWrapping="Wrap"  FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <Label Content="Prenom :" HorizontalAlignment="Left" Margin="68,145,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBlock Text="{Binding PrenomProfil}" HorizontalAlignment="Left" Margin="136,150,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="29" Width="211" FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <Label Content="Login :" HorizontalAlignment="Left" Margin="75,196,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBlock Text="{Binding LoginProfil}" HorizontalAlignment="Left" Margin="136,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="211" FontSize="14" FontFamily="Times New Roman" FontWeight="Bold"/>
+      
+
+        <TextBlock Margin="185,10,203,0" TextWrapping="Wrap" Text="Mon Profile" VerticalAlignment="Top" Height="35" FontSize="22" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <Button Command="{Binding Path=ModifierDirection}"  Content="Modifier" Margin="185,334,216,72.2" TextBlock.TextAlignment="Center"/>
+
+    </Grid>
+</Controls:MetroWindow>

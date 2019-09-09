@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MovieNetWcfService" />
+  <xs:element name="GetAllMovies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MovieNetWcfService" minOccurs="0" name="GetAllMoviesResult" nillable="true" type="q1:ArrayOfMovie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMovie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSet" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMovieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMovieResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMovie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_duration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_genre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_summary" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_UserSet_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMovieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMovieResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMovie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSet" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMovieResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMovieResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_Id" type="xs:int" />
+        <xs:element minOccurs="0" name="_title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_duration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_genre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_summary" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_image" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMovieByTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="titleSet" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMovieByTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MovieNetWcfService" minOccurs="0" name="FindMovieByTitleResult" nillable="true" type="q2:ArrayOfMovie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMovieByGenre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="genreSet" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMovieByGenreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindMovieByGenreResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMoviesOfUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idUser" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindMoviesOfUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MovieNetWcfService" minOccurs="0" name="FindMoviesOfUserResult" nillable="true" type="q3:ArrayOfMovie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSet" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMoviesByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MovieNetWcfService" minOccurs="0" name="GetAllMoviesByIdResult" nillable="true" type="q4:ArrayOfMovie" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

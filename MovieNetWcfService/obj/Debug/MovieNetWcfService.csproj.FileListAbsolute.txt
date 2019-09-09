@@ -1,0 +1,12 @@
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\obj\Debug\MovieNetWcfService.csproj.CoreCompileInputs.cache
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\MovieNetWcfService.dll.config
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\MovieNetWcfService.dll
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\MovieNetWcfService.pdb
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\EntityFramework.dll
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\EntityFramework.xml
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\obj\Debug\MovieNetWcfService.csproj.CopyComplete
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\obj\Debug\MovieNetWcfService.dll
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\obj\Debug\MovieNetWcfService.pdb
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetWcfService\obj\Debug\MovieNetWcfService.csprojAssemblyReference.cache

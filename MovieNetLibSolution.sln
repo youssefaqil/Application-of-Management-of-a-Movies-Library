@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNetWcfService", "MovieNetWcfService\MovieNetWcfService.csproj", "{87DD7B1B-A74E-478F-B2FD-C55D9C734D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNetWpfApp", "MovieNetWpfApp\MovieNetWpfApp.csproj", "{1927A86A-1788-4365-8D5F-F240ADB1672C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{87DD7B1B-A74E-478F-B2FD-C55D9C734D82} = {87DD7B1B-A74E-478F-B2FD-C55D9C734D82}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87DD7B1B-A74E-478F-B2FD-C55D9C734D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DD7B1B-A74E-478F-B2FD-C55D9C734D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DD7B1B-A74E-478F-B2FD-C55D9C734D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DD7B1B-A74E-478F-B2FD-C55D9C734D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1927A86A-1788-4365-8D5F-F240ADB1672C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1927A86A-1788-4365-8D5F-F240ADB1672C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1927A86A-1788-4365-8D5F-F240ADB1672C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1927A86A-1788-4365-8D5F-F240ADB1672C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52B9F6A3-8655-4B94-AAAB-8FB15B05DF12}
+	EndGlobalSection
+EndGlobal

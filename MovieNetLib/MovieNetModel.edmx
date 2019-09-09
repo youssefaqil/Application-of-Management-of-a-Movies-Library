@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbMovieNetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MovieSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Duration" Type="nvarchar(max)" />
+          <Property Name="Genre" Type="nvarchar(max)" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="User_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="NoteSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Score" Type="int" />
+          <Property Name="Comment" Type="text" />
+          <Property Name="Movie_Id" Type="int" />
+          <Property Name="User_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="UserSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar(max)" />
+          <Property Name="Lastname" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Movie_User">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="0..1" />
+          <End Role="MovieSet" Type="Self.MovieSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovieSet">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_Movie">
+          <End Role="MovieSet" Type="Self.MovieSet" Multiplicity="0..1" />
+          <End Role="NoteSet" Type="Self.NoteSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoteSet">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_User">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="0..1" />
+          <End Role="NoteSet" Type="Self.NoteSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoteSet">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbMovieNetModelStoreContainer">
+          <EntitySet Name="MovieSet" EntityType="Self.MovieSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NoteSet" EntityType="Self.NoteSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Movie_User" Association="Self.FK_Movie_User">
+            <End Role="UserSet" EntitySet="UserSet" />
+            <End Role="MovieSet" EntitySet="MovieSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_Movie" Association="Self.FK_Note_Movie">
+            <End Role="MovieSet" EntitySet="MovieSet" />
+            <End Role="NoteSet" EntitySet="NoteSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_User" Association="Self.FK_Note_User">
+            <End Role="UserSet" EntitySet="UserSet" />
+            <End Role="NoteSet" EntitySet="NoteSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbMovieNetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MovieSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_Id" Type="Int32" />
+          <NavigationProperty Name="UserSet" Relationship="Self.FK_Movie_User" FromRole="MovieSet" ToRole="UserSet" />
+          <NavigationProperty Name="NoteSets" Relationship="Self.FK_Note_Movie" FromRole="MovieSet" ToRole="NoteSet" />
+        </EntityType>
+        <EntityType Name="NoteSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Movie_Id" Type="Int32" />
+          <Property Name="User_Id" Type="Int32" />
+          <NavigationProperty Name="MovieSet" Relationship="Self.FK_Note_Movie" FromRole="NoteSet" ToRole="MovieSet" />
+          <NavigationProperty Name="UserSet" Relationship="Self.FK_Note_User" FromRole="NoteSet" ToRole="UserSet" />
+        </EntityType>
+        <EntityType Name="UserSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MovieSets" Relationship="Self.FK_Movie_User" FromRole="UserSet" ToRole="MovieSet" />
+          <NavigationProperty Name="NoteSets" Relationship="Self.FK_Note_User" FromRole="UserSet" ToRole="NoteSet" />
+        </EntityType>
+        <Association Name="FK_Movie_User">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="0..1" />
+          <End Role="MovieSet" Type="Self.MovieSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovieSet">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_Movie">
+          <End Role="MovieSet" Type="Self.MovieSet" Multiplicity="0..1" />
+          <End Role="NoteSet" Type="Self.NoteSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoteSet">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Note_User">
+          <End Role="UserSet" Type="Self.UserSet" Multiplicity="0..1" />
+          <End Role="NoteSet" Type="Self.NoteSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoteSet">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbMovieNetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MovieSets" EntityType="Self.MovieSet" />
+          <EntitySet Name="NoteSets" EntityType="Self.NoteSet" />
+          <EntitySet Name="UserSets" EntityType="Self.UserSet" />
+          <AssociationSet Name="FK_Movie_User" Association="Self.FK_Movie_User">
+            <End Role="UserSet" EntitySet="UserSets" />
+            <End Role="MovieSet" EntitySet="MovieSets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_Movie" Association="Self.FK_Note_Movie">
+            <End Role="MovieSet" EntitySet="MovieSets" />
+            <End Role="NoteSet" EntitySet="NoteSets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Note_User" Association="Self.FK_Note_User">
+            <End Role="UserSet" EntitySet="UserSets" />
+            <End Role="NoteSet" EntitySet="NoteSets" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbMovieNetModelStoreContainer" CdmEntityContainer="DbMovieNetEntities">
+          <EntitySetMapping Name="MovieSets">
+            <EntityTypeMapping TypeName="DbMovieNetModel.MovieSet">
+              <MappingFragment StoreEntitySet="MovieSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoteSets">
+            <EntityTypeMapping TypeName="DbMovieNetModel.NoteSet">
+              <MappingFragment StoreEntitySet="NoteSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSets">
+            <EntityTypeMapping TypeName="DbMovieNetModel.UserSet">
+              <MappingFragment StoreEntitySet="UserSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

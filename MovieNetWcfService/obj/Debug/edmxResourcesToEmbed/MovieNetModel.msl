@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbMovieNetModelStoreContainer" CdmEntityContainer="DbMovieNetEntities">
+    <EntitySetMapping Name="MovieSets">
+      <EntityTypeMapping TypeName="DbMovieNetModel.MovieSet">
+        <MappingFragment StoreEntitySet="MovieSet">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteSets">
+      <EntityTypeMapping TypeName="DbMovieNetModel.NoteSet">
+        <MappingFragment StoreEntitySet="NoteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSets">
+      <EntityTypeMapping TypeName="DbMovieNetModel.UserSet">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

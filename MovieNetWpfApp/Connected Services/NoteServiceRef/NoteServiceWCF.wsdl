@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NoteServiceWCF" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64823/NoteServiceWCF.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MovieNetWcfService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INoteServiceWCF_GetAllNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNote" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_GetAllNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_GetNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNote" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_GetNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_CreateNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNote" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_CreateNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_UpdateNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNote" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_UpdateNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_DeleteNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNote" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_DeleteNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_FindNotesOfMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindNotesOfMovie" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_FindNotesOfMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindNotesOfMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_FindNotesOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindNotesOfUser" />
+  </wsdl:message>
+  <wsdl:message name="INoteServiceWCF_FindNotesOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindNotesOfUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INoteServiceWCF">
+    <wsdl:operation name="GetAllNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/GetAllNote" message="tns:INoteServiceWCF_GetAllNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/GetAllNoteResponse" message="tns:INoteServiceWCF_GetAllNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/GetNote" message="tns:INoteServiceWCF_GetNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/GetNoteResponse" message="tns:INoteServiceWCF_GetNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/CreateNote" message="tns:INoteServiceWCF_CreateNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/CreateNoteResponse" message="tns:INoteServiceWCF_CreateNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/UpdateNote" message="tns:INoteServiceWCF_UpdateNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/UpdateNoteResponse" message="tns:INoteServiceWCF_UpdateNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/DeleteNote" message="tns:INoteServiceWCF_DeleteNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/DeleteNoteResponse" message="tns:INoteServiceWCF_DeleteNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotesOfMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/FindNotesOfMovie" message="tns:INoteServiceWCF_FindNotesOfMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/FindNotesOfMovieResponse" message="tns:INoteServiceWCF_FindNotesOfMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNotesOfUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/INoteServiceWCF/FindNotesOfUser" message="tns:INoteServiceWCF_FindNotesOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INoteServiceWCF/FindNotesOfUserResponse" message="tns:INoteServiceWCF_FindNotesOfUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INoteServiceWCF" type="tns:INoteServiceWCF">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllNote">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/GetAllNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNote">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/GetNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNote">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/CreateNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNote">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/UpdateNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/DeleteNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotesOfMovie">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/FindNotesOfMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNotesOfUser">
+      <soap:operation soapAction="http://tempuri.org/INoteServiceWCF/FindNotesOfUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NoteServiceWCF">
+    <wsdl:port name="BasicHttpBinding_INoteServiceWCF" binding="tns:BasicHttpBinding_INoteServiceWCF">
+      <soap:address location="http://localhost:64823/NoteServiceWCF.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

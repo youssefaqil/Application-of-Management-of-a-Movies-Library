@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8be6937b-c378-4fa5-a40f-d7def263bd50" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:64823/MovieServiceWCF.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MovieServiceWCF.xsd" MetadataType="Schema" ID="b817cafd-d117-4b6f-bdc8-3d090fcd4d86" SourceId="1" SourceUrl="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd0" />
+    <MetadataFile FileName="MovieServiceWCF1.xsd" MetadataType="Schema" ID="9789cf16-bede-4840-8156-b6be210d3005" SourceId="1" SourceUrl="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd1" />
+    <MetadataFile FileName="MovieServiceWCF.wsdl" MetadataType="Wsdl" ID="f08cc6b0-698c-436e-aae0-7a89fba018f2" SourceId="1" SourceUrl="http://localhost:64823/MovieServiceWCF.svc?wsdl" />
+    <MetadataFile FileName="MovieServiceWCF2.xsd" MetadataType="Schema" ID="ee0e8ed5-891b-4fcb-ab27-05f6bea14a2b" SourceId="1" SourceUrl="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd2" />
+    <MetadataFile FileName="MovieServiceWCF.disco" MetadataType="Disco" ID="718faa53-8ebf-48ee-94a8-fea01b6eded7" SourceId="1" SourceUrl="http://localhost:64823/MovieServiceWCF.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

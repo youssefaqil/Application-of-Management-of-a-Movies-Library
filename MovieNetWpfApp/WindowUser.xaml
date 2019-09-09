@@ -1,0 +1,43 @@
+﻿<Controls:MetroWindow x:Class="MovieNetWpfApp.WindowUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieNetWpfApp"
+        mc:Ignorable="d"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="MovieApp" Height="400" Width="384"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resources/icons8-movie-beginning-64.png">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <TextBlock  HorizontalAlignment="Left" Margin="143,10,0,0" TextWrapping="Wrap" Text="MovieApp" VerticalAlignment="Top" Height="35" Width="102" FontSize="22" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <Button Command="{Binding Path=GestionDesProfiles}" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Center" Background="Transparent" BorderBrush="Transparent" >
+            <StackPanel Orientation="Vertical">
+                <Image Source="Resources/profil.png" Width="136"/>
+                <TextBlock FontWeight="Bold"  Background="#FF5198DA" HorizontalAlignment="Stretch" TextAlignment="Center"
+                           Padding="6" FontFamily="Times New Roman" FontSize="12"><Run Text="Gestion des Profiles"/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Command="{Binding Path=GestionDesMovies}" Cursor="Hand" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent" BorderBrush="Transparent" >
+            <StackPanel Orientation="Vertical">
+                <Image Source="Resources/videos-seo-abondance.png" Width="136"/>
+                <TextBlock FontWeight="Bold"  Background="#FF5198DA" HorizontalAlignment="Stretch" TextAlignment="Center"
+                           Padding="6" FontFamily="Times New Roman" FontSize="12"><Run Text="Gestion des Filmes"/></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+
+</Controls:MetroWindow>

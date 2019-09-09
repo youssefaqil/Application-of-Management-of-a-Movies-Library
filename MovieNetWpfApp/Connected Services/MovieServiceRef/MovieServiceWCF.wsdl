@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MovieServiceWCF" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64823/MovieServiceWCF.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MovieNetWcfService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMovieServiceWCF_GetAllMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_GetAllMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_GetMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_GetMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_CreateMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_CreateMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_DeleteMovie_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMovie" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_DeleteMovie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMovieByTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMovieByTitle" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMovieByTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMovieByTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMovieByGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMovieByGenre" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMovieByGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMovieByGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMoviesOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMoviesOfUser" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_FindMoviesOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMoviesOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_GetAllMoviesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesById" />
+  </wsdl:message>
+  <wsdl:message name="IMovieServiceWCF_GetAllMoviesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMovieServiceWCF">
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetAllMovies" message="tns:IMovieServiceWCF_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetAllMoviesResponse" message="tns:IMovieServiceWCF_GetAllMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetMovie" message="tns:IMovieServiceWCF_GetMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetMovieResponse" message="tns:IMovieServiceWCF_GetMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/CreateMovie" message="tns:IMovieServiceWCF_CreateMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/CreateMovieResponse" message="tns:IMovieServiceWCF_CreateMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/DeleteMovie" message="tns:IMovieServiceWCF_DeleteMovie_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/DeleteMovieResponse" message="tns:IMovieServiceWCF_DeleteMovie_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/UpdateUser" message="tns:IMovieServiceWCF_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/UpdateUserResponse" message="tns:IMovieServiceWCF_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMovieByTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMovieByTitle" message="tns:IMovieServiceWCF_FindMovieByTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMovieByTitleResponse" message="tns:IMovieServiceWCF_FindMovieByTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMovieByGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMovieByGenre" message="tns:IMovieServiceWCF_FindMovieByGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMovieByGenreResponse" message="tns:IMovieServiceWCF_FindMovieByGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMoviesOfUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMoviesOfUser" message="tns:IMovieServiceWCF_FindMoviesOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/FindMoviesOfUserResponse" message="tns:IMovieServiceWCF_FindMoviesOfUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetAllMoviesById" message="tns:IMovieServiceWCF_GetAllMoviesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMovieServiceWCF/GetAllMoviesByIdResponse" message="tns:IMovieServiceWCF_GetAllMoviesById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMovieServiceWCF" type="tns:IMovieServiceWCF">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/GetAllMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/GetMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMovie">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/CreateMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/DeleteMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMovieByTitle">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/FindMovieByTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMovieByGenre">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/FindMovieByGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMoviesOfUser">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/FindMoviesOfUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesById">
+      <soap:operation soapAction="http://tempuri.org/IMovieServiceWCF/GetAllMoviesById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MovieServiceWCF">
+    <wsdl:port name="BasicHttpBinding_IMovieServiceWCF" binding="tns:BasicHttpBinding_IMovieServiceWCF">
+      <soap:address location="http://localhost:64823/MovieServiceWCF.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

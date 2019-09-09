@@ -1,0 +1,2 @@
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetLib\obj\Debug\MovieNetLib.csprojResolveAssemblyReference.cache
+C:\Users\yaqil\source\repos\MovieNetLibSolution\MovieNetLib\obj\Debug\MovieNetLib.csproj.CoreCompileInputs.cache
